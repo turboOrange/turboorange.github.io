@@ -72,3 +72,8 @@ footer {
 footer p {
     color: #bb86fc;
 }
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
