@@ -77,3 +77,7 @@ img {
     max-width: 100%;
     max-height: 100%;
 }
+.ascii-art {
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre;
+}
