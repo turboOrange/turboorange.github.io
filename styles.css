@@ -81,3 +81,18 @@ img {
     font-family: 'Courier New', Courier, monospace;
     white-space: pre;
 }
+.rainbow-text {
+    font-family: Arial Black, Gadget, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    font-size: 34px;
+}
+.rainbow-text .block-line > span {
+    display: inline-block;
+}
+span.block-line > span {
+    background-image: linear-gradient(90deg,#9400D3,#4B0082,#0000FF,#00FF00,#FFFF00,#FF7F00,#FF0000);
+    color: #0000;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
