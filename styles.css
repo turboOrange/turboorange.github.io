@@ -6,7 +6,11 @@ body, h1, h2, h3, p, ul {
 
 /* Base styles */
 body {
-    background-color: #121212;
+    background-color: #202020;
+    background-image: url('bg.jpg');
+    background-repeat: repeat;
+    background-position: top left;
+    background-size: auto;
     color: #e0e0e0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
