@@ -58,29 +58,42 @@
         How do we implement that with Python, you ask? Here's an example of classic OOP:
         
         <pre><code>
-            class Animal:
-                def speak(self):
-                    return "Some sound"
+class Animal:
+    def speak(self):
+        return "Some sound"
 
-            class Dog(Animal):
-                def speak(self):
-                    return "Woof!"
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"
         </code></pre>
 
         And here's how to implement it with 3.8:
 
         <pre><code>
-            from typing import Protocol
+from typing import Protocol, Optional
 
-            class Speaker(Protocol):
-                def speak(self) -> str: ...
+class Speaker(Protocol):
+    def speak(self) -> str:
+        ...
 
-            def make_it_speak(thing: Speaker):
-                print(thing.speak())
+class DefaultSpeaker:
+    def speak(self) -> str:
+        return "Some sound"
+
+class DogSpeaker:
+    def speak(self) -> str:
+        return "Woof!"
+
+class Dog:
+    def __init__(self, speaker: Optional[Speaker] = None):
+        self.speaker = speaker or DogSpeaker()
+
+    def speak(self) -> str:
+        return self.speaker.speak()
         </code></pre>
         We have to shift our way of thinking to behavior instead of fitting things into larger categories, basically.
         There is an interesting video on the subject <a href="https://www.youtube.com/watch?v=wo84LFzx5nI">The Big OOPs: Anatomy of a Thirty-five-year Mistake" presented by Casey Muratori</a>.
-        That kind of idea change really excites me.
+        That kind of idea change really excites me. <a href="https://dev.to/fwojciec/protocols-and-composition-in-python-8mm"></a>I found an interesting text here about how it's getting implemented in Python</a>
     </p>
 </article>
 
