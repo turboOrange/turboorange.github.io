@@ -44,6 +44,46 @@
         </ul>
     </nav>
     <main>
+<article>
+    <h2>Composition over inheritance. The good old new way to OOP 2025-07-22</h2>
+    <p>
+        So. I learned first that Rust decided to not embrace inheritance. I found it a bit odd at first cause it's one of the most important parts of OOP. It's even in the SOLID principles.
+        How can it be a mistake, right? I thought it was something I would only experiment with if I'm using Rust, so I didn't bother much at first. I understood that inheritance was a bit fragile but didn't know the alternative much.
+        If you are in that situation, this article is for you. Did you know that composition is getting more and more retrofitted in older languages? You can do it in Python 3.8! But first, let's talk about what we try to solve by changing the way we reuse class code.
+        Because, yes, both techniques exist to enable reusability of code. There might be more examples, but I personally see two scenarios where inheritance collapses. Here's one: 
+        You have 3 animals. The first one can fly and walk, the second one can walk and swim. The last one can swim and fly. You could put them all under "Animal" but what is the point? Nothing is reusable that way.
+        You will have to rewrite all those methods twice. Here's another one; that one is more about maintainability of code. In your code you have objects like Plant, Animal, Rock that are interfaces for Maple, Dog, GrayRock.
+        So at some point you add that animals can move by themselves. They are the only ones that can do that so far, but 10 years later, you have to add a robot. Will you copy the moving-by-themselves part to the robot code? Will the robot be an animal?
+        The solution is basically to focus on traits of those objects instead of trying to make them part of groups. If your dog can walk, we give it the Walker trait, for example.
+        How do we implement that with Python, you ask? Here's an example of classic OOP:
+        
+        <pre><code>
+            class Animal:
+                def speak(self):
+                    return "Some sound"
+
+            class Dog(Animal):
+                def speak(self):
+                    return "Woof!"
+        </code></pre>
+
+        And here's how to implement it with 3.8:
+
+        <pre><code>
+            from typing import Protocol
+
+            class Speaker(Protocol):
+                def speak(self) -> str: ...
+
+            def make_it_speak(thing: Speaker):
+                print(thing.speak())
+        </code></pre>
+        We have to shift our way of thinking to behavior instead of fitting things into larger categories, basically.
+        There is an interesting video on the subject <a href="https://www.youtube.com/watch?v=wo84LFzx5nI">The Big OOPs: Anatomy of a Thirty-five-year Mistake" presented by Casey Muratori</a>.
+        That kind of idea change really excites me.
+    </p>
+</article>
+
         <article>
             <h2>My focus right now. 2025-07-14</h2>
             <p>
