@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turbo Orange's Space</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!--cursor management-->
+    <script src="https://unpkg.com/ani-cursor@0.0.5/dist/index.js"></script>
+
+    <script>
+        (async () => {
+        const res   = await fetch('/cursor1.ani');
+        const bytes = new Uint8Array(await res.arrayBuffer());
+        const css   = aniCursor.convertAniBinaryToCSS('body', bytes);
+        const tag   = Object.assign(document.createElement('style'), {textContent: css});
+        document.head.appendChild(tag);
+        })();
+    </script>
+    <header>
+        <img src="turboorange.jpeg" alt="An orange sitting on the palmrest of a keyboard. The keyboard is blank. The image is all purple." class="banner">
+        <pre class="ascii-art" style="color: purple; font-weight: bold;">
+.--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--. 
+/ .. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \
+\ \/\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ \/ /
+ \/ /`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'\/ / 
+ / /\  ╔╦╗┬ ┬┬─┐┌┐ ┌─┐  ╔═╗┬─┐┌─┐┌┐┌┌─┐┌─┐┌─┐  ╔═╗┌─┐┌─┐┌─┐┌─┐   / /\ 
+/ /\ \  ║ │ │├┬┘├┴┐│ │  ║ ║├┬┘├─┤││││ ┬├┤ └─┐  ╚═╗├─┘├─┤│  ├┤   / /\ \
+\ \/ /  ╩ └─┘┴└─└─┘└─┘  ╚═╝┴└─┴ ┴┘└┘└─┘└─┘└─┘  ╚═╝┴  ┴ ┴└─┘└─┘  \ \/ /
+ \/ /                                                            \/ / 
+ / /\.--..--..--..--..--..--..--..--..--..--..--..--..--..--..--./ /\ 
+/ /\ \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \/\ \
+\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `' /
+ `--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--'`--' 
+        </pre>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/portfolio.html">Portfolio</a></li>
+        </ul>
+    </nav>
+    <main>
+        <article>
+            <h2>Readcode</h2>
+            <p>
+                This was my univercity final project. We worked in team to create a website that is inspired by leetcode but that works in reverse.
+                We use the chatGPT AI to generate a random small code that is intentionally hard to read and the user has to explain with words what's going on.
+                We then use the LLM again to score the answer.
+                It works with any language that open AI have been traned on.
+
+                It uses javascript, react, express openAI
+                <li><a href="https://github.com/turboOrange/readcode">Check it out!</a></li>
+                I updated it recently to get familiar with snyk.
+            </p>
+        </article>
+            <h2>Spinach</h2>
+            <p>
+                I learned the basics of quantum computing and realized I'm not into any of the existing quantum languages. I just find that they don’t offer enough features to make developers’ lives easier—so I’m making my own.
+                What this language introduces is the ability to name everything, the concept of pipelines, and, in the future, support for code reusability. It uses Pytket as a backend and will eventually be able to simulate, work in a jupyter notbook and compile into all the other major quantum languages.
+                At the moment, it compiles into QASM.
+                
+                It uses Python with lark
+                <li><a href="https://github.com/turboOrange/spinach">Check it out!</a></li>
+            </p>
+        </article>
+        </article>
+            <h2>Out of grave</h2>
+            <p>
+                This is the first language I made as a final project for my language creation course at UQAM. It's still a bit buggy but I leanred a lot doing it. It's the combination of two languages to create a small text based videogame faster then if we would do it with a general language.
+                
+                It uses Java with sablecc
+                <li><a href="https://github.com/turboOrange/oog">Check it out!</a></li>
+            </p>
+        </article>
+
+        </article>
+            <h2>The password in yellow</h2>
+            <p>
+                This is my newest project. The idea is to create the exact same password manage in different languages to be able to compare them.
+                I have a repo that details how those should work and I create a repo by langugages. At the moment, the python version is in construction.
+                I want to write it in python, elixir and go.
+                <li><a href="https://github.com/turboOrange/tpiy">Check it out! (documentation)</a></li>
+                <li><a href="https://github.com/turboOrange/tpiy-titanoboa">Check it out! (Python version)</a></li>
+            </p>
+        </article>
+
+    </main>
+</body>
+</html>
