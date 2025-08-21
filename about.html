@@ -7,18 +7,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!--cursor management-->
-    <script src="https://unpkg.com/ani-cursor@0.0.5/dist/index.js"></script>
-
-    <script>
-        (async () => {
-        const res   = await fetch('/cursor1.ani');
-        const bytes = new Uint8Array(await res.arrayBuffer());
-        const css   = aniCursor.convertAniBinaryToCSS('body', bytes);
-        const tag   = Object.assign(document.createElement('style'), {textContent: css});
-        document.head.appendChild(tag);
-        })();
-    </script>
     <header>
         <img src="turboorange.jpeg" alt="An orange sitting on the palmrest of a keyboard. The keyboard is blank. The image is all purple." class="banner">
         <pre class="ascii-art" style="color: purple; font-weight: bold;">
