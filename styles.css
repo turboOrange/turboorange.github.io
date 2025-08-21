@@ -11,11 +11,12 @@ body {
     background-repeat: repeat;
     background-position: top left;
     background-size: auto;
+    background-attachment: fixed;
     color: #e0e0e0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     padding: 20px;
-    cursor: url('cursor1.cur'), auto;
+    cursor: url('mouse.png'), auto;
 }
 
 p {
