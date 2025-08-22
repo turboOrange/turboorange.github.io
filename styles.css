@@ -8,9 +8,9 @@ body, h1, h2, h3, p, ul {
 body {
     background-color: #202020;
     background-image: url('bg.jpg');
-    background-repeat: repeat;
-    background-position: top left;
-    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     background-attachment: fixed;
     color: #e0e0e0;
     font-family: Arial, sans-serif;
