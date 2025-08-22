@@ -28,9 +28,12 @@ function draw(e) {
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
 
+  // Use composite operation for erasing
   if (erasing) {
-    ctx.strokeStyle = '#fff';
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.strokeStyle = 'rgba(0,0,0,1)';
   } else {
+    ctx.globalCompositeOperation = 'source-over';
     ctx.strokeStyle = colorPicker.value;
   }
 
