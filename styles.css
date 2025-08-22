@@ -60,7 +60,6 @@ header h1 {
 /* Main content */
 main {
     margin: 20px auto;
-    max-width: 800px;
     padding: 20px;
     background-color: #1c1c1c;
     border-radius: 16px;
