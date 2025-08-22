@@ -3,8 +3,10 @@ const ctx = canvas.getContext('2d');
 const colorPicker = document.getElementById('colorPicker');
 const pencilSize = document.getElementById('pencilSize');
 const clearBtn = document.getElementById('clearBtn');
+const eraserBtn = document.getElementById('eraserBtn');
 
 let drawing = false;
+let erasing = false;
 let lastX = 0;
 let lastY = 0;
 
@@ -23,9 +25,14 @@ function draw(e) {
   if (!drawing) return;
   const [x, y] = getPosition(e);
   ctx.lineWidth = pencilSize.value;
-  ctx.strokeStyle = colorPicker.value;
   ctx.lineCap = 'round';
   ctx.lineJoin = 'round';
+
+  if (erasing) {
+    ctx.strokeStyle = '#fff';
+  } else {
+    ctx.strokeStyle = colorPicker.value;
+  }
 
   ctx.beginPath();
   ctx.moveTo(lastX, lastY);
@@ -38,13 +45,11 @@ function draw(e) {
 function getPosition(e) {
   const rect = canvas.getBoundingClientRect();
   if (e.touches) {
-    // Touch event
     return [
       e.touches[0].clientX - rect.left,
       e.touches[0].clientY - rect.top,
     ];
   } else {
-    // Mouse event
     return [
       e.clientX - rect.left,
       e.clientY - rect.top,
@@ -66,6 +71,12 @@ canvas.addEventListener('touchend', endDraw);
 // Clear button
 clearBtn.addEventListener('click', () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
+
+// Eraser button toggle
+eraserBtn.addEventListener('click', () => {
+  erasing = !erasing;
+  eraserBtn.classList.toggle('active', erasing);
 });
 
 // Prevent scrolling on touch devices while drawing
