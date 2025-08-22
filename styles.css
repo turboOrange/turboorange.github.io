@@ -93,6 +93,12 @@ main {
     filter: url(#glass-distort);
 }
 
+.canvas-container {
+  width: 90vw;
+  max-width: 1600px;
+  min-width: 1000px;
+}
+
 .toolbar {
   margin: 20px 0;
   display: flex;
