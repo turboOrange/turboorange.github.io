@@ -16,7 +16,7 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     padding: 20px;
-    cursor: url('mouse.png'), auto;
+    cursor: url('moon.cur'), auto;
 }
 
 p {
@@ -37,9 +37,10 @@ code {
 /* Header */
 header {
     background-color: #1c1c1c;
-    padding: 20px 0;
+    padding: 20px;
     text-align: center;
-    border-bottom: 2px solid #5c0b7a;
+    border-radius: 8px;
+    border: 1px solid #5c0b7a;
 }
 
 header h1 {
