@@ -77,7 +77,7 @@ main {
 }
 
 .canvas-container {
-  width: 90vw;
+  position: relative;
   min-width: 2000px;
   margin: 20px auto;
   padding: 20px;
@@ -96,6 +96,7 @@ main {
 }
 
 .toolbar {
+  position: relative;
   margin: 20px 0;
   display: flex;
   align-items: center;
