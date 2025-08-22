@@ -34,7 +34,7 @@
         </ul>
     </nav>
 <body>
-    <main>
+    <header>
         <div class="toolbar">
             <label for="colorPicker">Color:</label>
             <input type="color" id="colorPicker" value="#000000">
@@ -43,8 +43,10 @@
             <button id="eraserBtn">Eraser</button>
             <button id="clearBtn">Clear</button>
         </div>
-        <canvas id="whiteboard" width="1600" height="1000"></canvas>
+        <div class="canvas-container">
+            <canvas id="whiteboard"></canvas>
+        </div>
         <script src="white_board.js"></script>
-    </main>
+    </header>
 </body>
 </html>

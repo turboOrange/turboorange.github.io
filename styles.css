@@ -63,6 +63,7 @@ main {
     padding: 20px;
     background-color: #1c1c1c;
     border-radius: 16px;
+    max-width: 800px;
     /* Glass effect */
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(14px);
