@@ -51,7 +51,6 @@ header {
     /* Apply SVG distortion */
     filter: url(#glass-distort);
 }
-}
 
 header h1 {
     color: #bb86fc;
@@ -75,7 +74,6 @@ main {
 
     /* Apply SVG distortion */
     filter: url(#glass-distort);
-}
 }
 
 /* Footer */
