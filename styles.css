@@ -104,30 +104,14 @@ nav {
 
     /* Glass effect */
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 
     border: 1px solid rgba(187, 134, 252, 0.3);
     box-shadow: 0 4px 30px rgba(0,0,0,0.4);
-}
 
-/* Moving highlight to simulate liquid shimmer */
-nav::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.15), transparent 70%);
-    animation: liquidShift 8s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes liquidShift {
-    0%   { transform: rotate(0deg) translateX(0); }
-    50%  { transform: rotate(180deg) translateX(40px); }
-    100% { transform: rotate(360deg) translateX(0); }
+    /* Apply SVG distortion */
+    filter: url(#glass-distort);
 }
 
 nav ul {
@@ -154,3 +138,4 @@ nav ul li a:hover {
     color: #e0e0e0;
     text-shadow: 0 0 8px #bb86fc;
 }
+
