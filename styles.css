@@ -48,27 +48,6 @@ header h1 {
     margin: 0;
 }
 
-/* Navigation */
-nav ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #bb86fc;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
 /* Main content */
 main {
     margin: 20px auto;
@@ -113,4 +92,65 @@ span.block-line > span {
     color: #0000;
     -webkit-background-clip: text;
     background-clip: text;
+}
+
+/* Navigation */
+nav {
+    position: relative;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 16px;
+    overflow: hidden;
+
+    /* Glass effect */
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(187, 134, 252, 0.3);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.4);
+}
+
+/* Moving highlight to simulate liquid shimmer */
+nav::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.15), transparent 70%);
+    animation: liquidShift 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes liquidShift {
+    0%   { transform: rotate(0deg) translateX(0); }
+    50%  { transform: rotate(180deg) translateX(40px); }
+    100% { transform: rotate(360deg) translateX(0); }
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #bb86fc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a:hover {
+    color: #e0e0e0;
+    text-shadow: 0 0 8px #bb86fc;
 }
