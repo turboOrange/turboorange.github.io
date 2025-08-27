@@ -34,6 +34,56 @@
         </ul>
     </nav>
     <main>
+        <h1>Professional projects</h1>
+        <article>
+            <h2>edge and edge2</h2>
+            <p>
+                When I started at GSI, I was tasked with creating the tests for the first edge controller; the second revision wasn't available yet.
+                I'm referring to test automation with hardware-in-the-loop. When I started, there was barely a test system in place.
+                We were three in the team plus a manager, and together we made the decisions about how the testing would work.
+                While the manager did much of the work, we contributed significantly to the structure.
+                The final structure made the code so flexible that when the Edge2 revision was released, we ported all the tests quickly despite its drastic API changes.
+                Those tests required creating internal REST APIs used to send pulses, serial messages, and other signals to the edge.
+
+                I also ported all the tests from bamboo to github actions during a tech transition.
+
+                The setup was also replicated to create tests for other products.
+
+                tech: python, django, pytest, C++, github, github action, github local runner, bamboo, bitbucket, websocket, AWS
+
+                <li><a href="https://www.automatedproduction.com/en_US/remote-management/edge2.html">Check it out!</a></li>
+            </p>
+        </article>
+        <article>
+            <h2>legacy connect</h2>
+            <p>
+                During a hackaton I made the code for the prototype what will be called later legacy connect.
+                It's a card that bridges the serial port of old controlers to the cloud. This is a modernisation of older systems still sold and in function.
+
+                I also created simulators and tests to make sure the final version actually works correctly.
+
+                tech: python, typescript, MQTT, websocket, playwrite
+                
+                <li><a href="https://www.automatedproduction.com/content/dam/public/grain-and-protein/shared/manuals/ap-cumberland/english/climate-control/controls/892-00101_QSG_LCRXTX_LCRS485_EN_FR_REV04.pdf">Check it out!</a></li>
+            </p>
+        </article>
+        <article>
+            <h2>customer portal and customer API</h2>
+            <p>
+                I worked on an API that let customers get information on their controllers and a portal to manage the permissions and obtain API keys for the API.
+                I did the testing and worked mostly on the backends. I made some frontend enhancements using my UX knowledge, mostly to give impaired people a better experience.
+
+                tech: typescript, javascript, playwrite, react, express, MQTT, AWS
+            </p>
+        </article>
+        <article>
+            <h2>AI doc</h2>
+            <p>
+                I worked on a local internal AI chatbot tool to search scattered documentation. The idea is it would give the information and point out where it is.
+                It's an idea to speed up product development.
+            </p>
+        </article>
+        <h1>Personal projects</h1>
         <article>
             <h2>Readcode</h2>
             <p>
@@ -77,7 +127,8 @@
                 <li><a href="https://github.com/turboOrange/tpiy-titanoboa">Check it out! (Python version)</a></li>
             </p>
         </article>
-
+        <h1>Other school projects</h1>
+            <h2>univercity</h2>
     </main>
 </body>
 </html>
