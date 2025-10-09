@@ -200,3 +200,21 @@ nav ul li a:hover {
     text-shadow: 0 0 8px #bb86fc;
 }
 
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+@media(prefers-reduced-motion) {
+    .hidden {
+        filter:blur(5px);
+        transform: translateX(-100%);
+        transition: none;
+    }
+}
+
+.show {
+    opacity: 1;
+    filter:blur(0);
+    transform: translateX(0);
+}

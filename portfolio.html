@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Turbo Orange's Space</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="app.js"></script>
 </head>
 <body>
     <header>
@@ -32,7 +33,7 @@
     </nav>
     <main>
         <h1>Professional projects</h1>
-        <article>
+        <article class="hidden">
             <h2>edge and edge2</h2>
             <p>
                 When I started at GSI, I was tasked with creating the tests for the first edge controller; the second revision wasn't available yet.
@@ -51,7 +52,7 @@
                 <li><a href="https://www.automatedproduction.com/en_US/remote-management/edge2.html">Check it out!</a></li>
             </p>
         </article>
-        <article>
+        <article class="hidden">
             <h2>legacy connect</h2>
             <p>
                 During a hackaton I made the code for the prototype what will be called later legacy connect.
@@ -64,7 +65,7 @@
                 <li><a href="https://www.automatedproduction.com/content/dam/public/grain-and-protein/shared/manuals/ap-cumberland/english/climate-control/controls/892-00101_QSG_LCRXTX_LCRS485_EN_FR_REV04.pdf">Check it out!</a></li>
             </p>
         </article>
-        <article>
+        <article class="hidden">
             <h2>customer portal and customer API</h2>
             <p>
                 I worked on an API that let customers get information on their controllers and a portal to manage the permissions and obtain API keys for the API.
@@ -73,7 +74,7 @@
                 tech: typescript, javascript, playwrite, react, express, MQTT, AWS
             </p>
         </article>
-        <article>
+        <article class="hidden">
             <h2>AI doc</h2>
             <p>
                 I worked on a local internal AI chatbot tool to search scattered documentation. The idea is it would give the information and point out where it is.
@@ -81,7 +82,7 @@
             </p>
         </article>
         <h1>Personal projects</h1>
-        <article>
+        <article class="hidden">
             <h2>Readcode</h2>
             <p>
                 This was my univercity final project. We worked in team to create a website that is inspired by leetcode but that works in reverse.
@@ -93,7 +94,7 @@
                 <li><a href="https://github.com/turboOrange/readcode">Check it out!</a></li>
                 I updated it recently to get familiar with snyk.
             </p>
-        </article>
+        <article class="hidden">
             <h2>Spinach</h2>
             <p>
                 I learned the basics of quantum computing and realized I'm not into any of the existing quantum languages. I just find that they don’t offer enough features to make developers’ lives easier—so I’m making my own.
@@ -104,7 +105,7 @@
                 <li><a href="https://github.com/spinachlang/spinachlang">Check it out!</a></li>
             </p>
         </article>
-        </article>
+        <article class="hidden">
             <h2>Out of grave</h2>
             <p>
                 This is the first language I made as a final project for my language creation course at UQAM. It's still a bit buggy but I leanred a lot doing it. It's the combination of two languages to create a small text based videogame faster then if we would do it with a general language.
@@ -114,16 +115,6 @@
             </p>
         </article>
 
-        </article>
-            <h2>The password in yellow</h2>
-            <p>
-                This is my newest project. The idea is to create the exact same password manage in different languages to be able to compare them.
-                I have a repo that details how those should work and I create a repo by langugages. At the moment, the python version is in construction.
-                I want to write it in python, elixir and go.
-                <li><a href="https://github.com/turboOrange/tpiy">Check it out! (documentation)</a></li>
-                <li><a href="https://github.com/turboOrange/tpiy-titanoboa">Check it out! (Python version)</a></li>
-            </p>
-        </article>
     </main>
 </body>
 </html>
