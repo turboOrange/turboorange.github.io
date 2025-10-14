@@ -383,19 +383,56 @@ I’m not convinced that AI truly optimizes my time ⏱️. I think you get more
 
     <script>
         const floater = document.getElementById('floater');
-        let offsetX = 0, offsetY = 0, isDragging = false;
 
+        // initial random direction and speed
+        let vx = (Math.random() - 0.5) * 0.5; // velocity X
+        let vy = (Math.random() - 0.5) * 0.5; // velocity Y
+        let x = window.innerWidth / 2;
+        let y = window.innerHeight / 2;
+        let isDragging = false;
+        let offsetX = 0, offsetY = 0;
+
+        // floating movement loop
+        function animate() {
+        if (!isDragging) {
+            x += vx;
+            y += vy;
+
+            // bounce off edges
+            if (x < 0 || x + floater.offsetWidth > window.innerWidth) vx *= -1;
+            if (y < 0 || y + floater.offsetHeight > window.innerHeight) vy *= -1;
+
+            // tiny random “0G turbulence”
+            vx += (Math.random() - 0.5) * 0.02;
+            vy += (Math.random() - 0.5) * 0.02;
+
+            // limit max speed
+            const maxSpeed = 0.8;
+            vx = Math.max(-maxSpeed, Math.min(maxSpeed, vx));
+            vy = Math.max(-maxSpeed, Math.min(maxSpeed, vy));
+
+            floater.style.left = `${x}px`;
+            floater.style.top = `${y}px`;
+        }
+
+        requestAnimationFrame(animate);
+        }
+        animate();
+
+        // dragging controls
         floater.addEventListener('mousedown', (e) => {
         isDragging = true;
         floater.classList.add('dragging');
-        offsetX = e.clientX - floater.offsetLeft;
-        offsetY = e.clientY - floater.offsetTop;
+        offsetX = e.clientX - x;
+        offsetY = e.clientY - y;
         });
 
         document.addEventListener('mousemove', (e) => {
         if (!isDragging) return;
-        floater.style.left = `${e.clientX - offsetX}px`;
-        floater.style.top = `${e.clientY - offsetY}px`;
+        x = e.clientX - offsetX;
+        y = e.clientY - offsetY;
+        floater.style.left = `${x}px`;
+        floater.style.top = `${y}px`;
         });
 
         document.addEventListener('mouseup', () => {

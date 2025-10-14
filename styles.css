@@ -219,30 +219,23 @@ nav ul li a:hover {
     transform: translateX(0);
 }
 
-  .floater {
+.floater {
     position: fixed;
     top: 50%;
     left: 50%;
     width: 100px;
     height: 100px;
-    border-radius: 50%;
-    background-image: url('ufo.png'); /* your image here */
+    background-image: url('ufo.png');
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     z-index: 99999;
     cursor: grab;
-    animation: floaty 10s ease-in-out infinite alternate;
-    pointer-events: auto;
-  }
+    transition: transform 0.1s;
+    filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));
+}
 
-  @keyframes floaty {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    50% { transform: translate(-52%, -48%) rotate(5deg); }
-    100% { transform: translate(-49%, -52%) rotate(-3deg); }
-  }
-
-  .dragging {
-    animation: none;
+.dragging {
     cursor: grabbing;
-  }
+    transition: none;
+}
